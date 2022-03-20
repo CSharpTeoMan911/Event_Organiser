@@ -1,0 +1,62 @@
+﻿<Page x:Class="Event_Organiser.TimeSetting"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Event_Organiser"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="TimeSetting" Loaded="TimeSettingsPageLoaded">
+
+    <Grid>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Rectangle Grid.RowSpan="6" Grid.ColumnSpan="5">
+
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.3,0.5" MappingMode="RelativeToBoundingBox" StartPoint="1,0.5">
+
+                    <GradientStop Color="#FF0E4A80"/>
+                    <GradientStop Color="#FF082A48" Offset="1"/>
+
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+
+        </Rectangle>
+
+        <StackPanel Orientation="Horizontal" Grid.RowSpan="2" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3">
+
+            <StackPanel Margin="80,0,0,0">
+                <TextBlock x:Name="Hour" Text="Hour" FontFamily="Consolas" FontSize="40" FontWeight="UltraBold" Foreground="White"/>
+                <TextBox TextChanged="HourText" x:Name="HourContent" BorderBrush="#FF082A48"  Background="#FF06355F" FontFamily="Consolas" FontWeight="UltraBold" Foreground="White" FontSize="40"/>
+            </StackPanel>
+
+            <StackPanel>
+                <TextBlock x:Name="Separator" Margin="20,40,20,0" Text="|" FontFamily="Consolas" FontSize="40" FontWeight="UltraBold" Foreground="White"/>
+            </StackPanel>
+            
+            <StackPanel>
+                <TextBlock x:Name="Minutes" Text="Minutes"  FontFamily="Consolas" FontSize="40" FontWeight="UltraBold" Foreground="White"/>
+                <TextBox TextChanged="MinutesText" x:Name="MinutesContent" BorderBrush="#FF082A48"  Background="#FF06355F" FontFamily="Consolas" FontWeight="UltraBold" Foreground="White" FontSize="40"/>
+            </StackPanel>
+      
+        </StackPanel>
+        
+    </Grid>
+</Page>

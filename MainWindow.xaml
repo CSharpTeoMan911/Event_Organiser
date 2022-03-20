@@ -1,0 +1,94 @@
+﻿<Window x:Class="Event_Organiser.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Event_Organiser"
+        mc:Ignorable="d"
+        Title="MainWindow" ResizeMode="NoResize" Loaded="AppWindowLoaded" Height="450" Width="800" WindowStyle="None" AllowsTransparency="True" Opacity="0.8" Closing="ApplicationClosing" Icon="Event-Organiser-Icon.png" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Rectangle MouseDown="MoveTheWindow" Grid.ColumnSpan="5">
+            
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.3,0.5" MappingMode="RelativeToBoundingBox" StartPoint="1,0.5">
+
+                    <GradientStop Color="#FF0E4A80"/>
+                    <GradientStop Color="#FF082A48" Offset="1"/>
+                    
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+            
+        </Rectangle>
+
+        
+        <Rectangle Grid.Row="1" Grid.RowSpan="5" Grid.ColumnSpan="5">
+
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.3,0.5" MappingMode="RelativeToBoundingBox" StartPoint="1,0.5">
+
+                    <GradientStop Color="#FF0E4A80"/>
+                    <GradientStop Color="#FF082A48" Offset="1"/>
+
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+
+        </Rectangle>
+
+        
+        <TextBlock x:Name="AnimationContext" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" FontFamily="Consolas" FontSize="13" Foreground="White" Text="Setting the event . . .  _" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+        <StackPanel x:Name="DataEventHandlingPanel" Orientation="Horizontal" Grid.Row="0"   >
+            <Button Click="SaveTheEvent" Content="&#xE105;" HorizontalAlignment="Center" FontFamily="Segoe MDL2 Assets" FontSize="22" VerticalAlignment="Center" BorderBrush="#FF082A48" Foreground="White"  Background="#FF082A48" />
+            <TextBlock x:Name="InfoLabel" FontSize="10" FontFamily="Consolas" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="White" Text="Save the  &#x0a;event"/>
+        </StackPanel>
+        
+
+        <Button Grid.Column="4" Click="CloseTheApp" VerticalAlignment="Top" HorizontalAlignment="Right" Background="Transparent" BorderBrush="Transparent" Foreground="White" FontSize="30" FontFamily="Segoe MDL2 Assets" Content="&#xEF2C;"/>
+        <Button Grid.Column="4" Click="MinimiseTheApp" Margin="70,0,0,0" HorizontalAlignment="Left" FontSize="30" VerticalAlignment="Top" FontFamily="Segoe MDL2 Assets" Content="&#xF7BA;" Background="Transparent" BorderBrush="Transparent" Foreground="White"/>
+
+
+
+        <Frame x:Name="FunctionNavigationMainframe" NavigationUIVisibility="Hidden" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="4"/>
+
+        <StackPanel Grid.Row="2" Grid.RowSpan="4">
+
+            <StackPanel Margin="0,0,0,40">
+                <TextBlock Margin="40,0,0,0" FontSize="16" FontFamily="Consolas" Foreground="White" Text="Time"/>
+                <Button Click="TimeSetting" x:Name="TimeButton" FontSize="23" HorizontalAlignment="Left" Margin="40,10,0,0" Content="&#xF745;" Foreground="White" Background="#FF0E4A80" FontFamily="Segoe MDL2 Assets"/>
+            </StackPanel>
+
+            <StackPanel  Margin="0,0,0,40">
+                <TextBlock Margin="40,0,0,10" FontSize="16" FontFamily="Consolas" Foreground="White" Text="Date"/>
+                <Button Click="DateSetting" x:Name="DateButton"  FontSize="23" HorizontalAlignment="Left" Margin="40,10,0,0" Content="&#xF745;" Foreground="White"   Background="#FF0E4A80" FontFamily="Segoe MDL2 Assets"/>
+            </StackPanel>
+
+            <StackPanel  Margin="0,0,0,40">
+                <TextBlock Margin="40,0,0,0" FontSize="16" FontFamily="Consolas" Foreground="White" Text="Location"/>
+                <Button Click="LocationSetting" x:Name="LocationButton"  FontSize="23" HorizontalAlignment="Left" Margin="40,10,0,0" Content="&#xF745;" Foreground="White" Background="#FF0E4A80"  FontFamily="Segoe MDL2 Assets"/>
+            </StackPanel>
+        </StackPanel>
+
+    
+
+      
+
+
+    </Grid>
+</Window>
